@@ -1,3 +1,12 @@
-<input type="date">までに達成</input>
+<div class="button017">
+  <% @goals.each do |goal|%>
+  <%= button_to goal.deadline, goal_path(goal[:id]) %>
+	<% end %>
+</div>
 
-<input type="submit" value="保存">
+
+
+
+
+
+

@@ -60,6 +60,10 @@ a {
   margin-right: 20px;
 }
 
+.nav__logout {
+  margin-right: 20px;
+}
+
 .search-form-003 {
   display: flex;
   justify-content: space-between;
@@ -206,3 +210,57 @@ a {
 
 
 /* 目標設定 */
+.contents {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+}
+.container {
+  background-color: #f5f5f5;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+  width: 750px;
+  height: 500px;
+}
+.form-group {
+  font-size: 18px;
+}
+.form-control {
+  width: 400px;
+  height: 70px;
+}
+.form-date {
+  margin-bottom: 10px;
+}
+
+
+/* マイページ */
+.button017 a {
+  background: #eee;
+  position: relative;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  margin: 0 auto;
+  max-width: 220px;
+  padding: 10px 25px;
+  color: #313131;
+  transition: 0.3s ease-in-out;
+  font-weight: 500;
+}
+.button017 a:before {
+  position: absolute;
+  top: 0;
+  right: 0;
+  content: '';
+  width: 0;
+  border-width: 0 16px 16px 0;
+  border-style: solid;
+  border-color: #fafcfc #fafcfc #c7c7c7 #cbcbcb;
+  box-shadow: -1px 1px 2px rgb(0 0 0 / 10%);
+}
+
+
