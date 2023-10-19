@@ -1,0 +1,25 @@
+<header id="header"></header>
+<div id="contents">
+  <aside id="sub">
+    <div class="box">
+     
+  </aside>
+  <main id="main">
+     <div id="tweet-box">
+            <textarea placeholder="What's happening?"></textarea>
+            <button>Tweet</button>
+        </div>
+  </main>
+  <aside id="sub">
+    <div class="box">
+     <ul class="more_list">
+          <li>
+            <%= link_to '編集', edit_goal_path(@goal.id) %>
+          </li>
+          <li>
+            <%= link_to '削除', goal_path(@goal.id), data: { turbo_method: :delete } %>
+          </li>
+        </ul>
+    </div>
+  </aside>
+</div>

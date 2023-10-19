@@ -1,6 +1,6 @@
 <div class="button017">
   <% @goals.each do |goal|%>
-  <%= button_to goal.deadline, goal_path(goal[:id]) %>
+  <%= link_to goal.deadline, goal_path(goal[:id]) %>
 	<% end %>
 </div>
 
