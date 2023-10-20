@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2023_10_16_033020) do
+ActiveRecord::Schema[7.0].define(version: 2023_10_20_064915) do
   create_table "goals", charset: "utf8", force: :cascade do |t|
     t.text "purpose", null: false
     t.text "goal", null: false
@@ -20,6 +20,17 @@ ActiveRecord::Schema[7.0].define(version: 2023_10_16_033020) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["user_id"], name: "index_goals_on_user_id"
+  end
+
+  create_table "posts", charset: "utf8", force: :cascade do |t|
+    t.bigint "user_id", null: false
+    t.bigint "goal_id", null: false
+    t.text "content", null: false
+    t.string "image"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["goal_id"], name: "index_posts_on_goal_id"
+    t.index ["user_id"], name: "index_posts_on_user_id"
   end
 
   create_table "users", charset: "utf8", force: :cascade do |t|
@@ -38,4 +49,6 @@ ActiveRecord::Schema[7.0].define(version: 2023_10_16_033020) do
   end
 
   add_foreign_key "goals", "users"
+  add_foreign_key "posts", "goals"
+  add_foreign_key "posts", "users"
 end

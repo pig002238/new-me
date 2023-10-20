@@ -1,5 +1,6 @@
 class Goal < ApplicationRecord
   belongs_to :user
+  has_many :posts
 
   validates :purpose, presence: true
   validates :goal, presence: true
