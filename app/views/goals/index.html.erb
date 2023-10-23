@@ -9,6 +9,12 @@
     </div>
 </article>
 
+<div class="anchor">
+<%= link_to "TRY", new_goal_path, class: :anchor %>
+<div class="anchor">|</div>
+<%= link_to "CHAT", new_goal_path, class: :anchor %>
+</div>
+
 <div class="goal-info">
   <% @goals.each do |goal| %>
   <%= link_to goal_path(goal), class: "goal-button" do %>

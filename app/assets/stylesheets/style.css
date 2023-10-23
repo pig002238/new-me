@@ -238,6 +238,50 @@ a {
 
 
 /* マイページ */
+article{
+  overflow: hidden;
+}
+.loop_wrap {
+    display: flex;
+    width: 100%;
+    overflow: hidden;
+    height: 180px;
+  }
+
+.loop_wrap div {
+    flex: 0 0 auto;
+    white-space: nowrap;
+    font-size: 150px;
+    font-weight: 550;
+    overflow: hidden;
+  }
+
+.loop_wrap div:nth-child(odd) {
+animation: loop 50s -25s linear infinite;
+}
+
+.loop_wrap div:nth-child(even) {
+animation: loop2 50s linear infinite;
+}
+
+@keyframes loop {
+    0% {
+      transform: translateX(100%);
+    }
+    to {
+      transform: translateX(-100%);
+    }
+  }
+  
+  @keyframes loop2 {
+    0% {
+      transform: translateX(0);
+    }
+    to {
+      transform: translateX(-200%);
+    }
+  }
+
 .goal-button {
   border: 1px solid #ccc;
   padding: 10px;
@@ -252,6 +296,12 @@ a {
   display: flex;
 }
 
+.anchor {
+  display: flex;
+  font-size: 25px;
+  padding: 5px;
+  margin-left: 20px;
+}
 
 
 /* 投稿詳細 */
@@ -311,45 +361,3 @@ body {
   color: gray;
 }
 
-article{
-  overflow: hidden;
-}
-.loop_wrap {
-    display: flex;
-    width: 100%;
-    overflow: hidden;
-  }
-
-.loop_wrap div {
-    flex: 0 0 auto;
-    white-space: nowrap;
-    font-size: 150px;
-    font-weight: 550;
-    overflow: hidden;
-  }
-
-.loop_wrap div:nth-child(odd) {
-animation: loop 50s -25s linear infinite;
-}
-
-.loop_wrap div:nth-child(even) {
-animation: loop2 50s linear infinite;
-}
-
-@keyframes loop {
-    0% {
-      transform: translateX(100%);
-    }
-    to {
-      transform: translateX(-100%);
-    }
-  }
-  
-  @keyframes loop2 {
-    0% {
-      transform: translateX(0);
-    }
-    to {
-      transform: translateX(-200%);
-    }
-  }
