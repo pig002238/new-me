@@ -1,10 +1,32 @@
-<div class="button017">
-  <% @goals.each do |goal|%>
-  <%= link_to goal.deadline, goal_path(goal[:id]) %>
-	<% end %>
+<article>
+  <div class="loop_wrap">
+      <div>
+      TODAY IS THE YOUNGEST DAY OF YOUR LIFE,TRY NEW ME.
+      </div>
+      <div>
+      TODAY IS THE YOUNGEST DAY OF YOUR LIFE,TRY NEW ME.
+      </div>
+    </div>
+</article>
+
+<div class="goal-info">
+  <% @goals.each do |goal| %>
+  <%= link_to goal_path(goal), class: "goal-button" do %>
+    
+      <% if goal.deadline %>
+        <span><%= goal.goal %></span><br>
+        <% if goal.deadline > Date.today %>
+          <% days_remaining = (goal.deadline - Date.today).to_i %>
+          <span>期日まで残り <%= days_remaining %> 日</span>
+        <% else %>
+          <span>期日が過ぎています</span>
+        <% end %>
+      <% end %>
+    
+  <% end %>
+<% end %>
+
 </div>
-
-
 
 
 

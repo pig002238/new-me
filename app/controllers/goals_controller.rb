@@ -20,6 +20,7 @@ class GoalsController < ApplicationController
   end
 
   def show
+    @posts = @goal.posts
   end
 
   def edit

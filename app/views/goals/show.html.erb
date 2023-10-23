@@ -5,10 +5,24 @@
      
   </aside>
   <main id="main">
-     <div id="tweet-box">
-            <textarea placeholder="What's happening?"></textarea>
-            <button>Tweet</button>
+     <div class="tweet-box">
+            <%= form_with(model: [@goal, Post.new],local: true) do |form| %>
+            <%= form.text_area :content, placeholder: "text"%>
+            <%= form.text_field :image, placeholder: "Image Url" %>
+            <%= form.submit "SEND" %>
+            <% end %>
+            
         </div>
+
+        <% @posts.each do |post| %>
+        <div class="tweet-box">
+        <%= link_to goal_post_path(@goal, post) do%>
+                <%= post.created_at %><br>
+                <%= post.content %>
+               </div>
+            <% end %>
+            <% end %>
+
   </main>
   <aside id="sub">
     <div class="box">
