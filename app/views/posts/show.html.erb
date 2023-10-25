@@ -3,31 +3,33 @@
   <aside id="sub">
     <div class="box">
   </aside>
-<div class="tweet_box">
-  <%= @post.content %>
+
+ <main id="main">
+<div class="post-box">
+<%= @user.nickname %><br>
+  <%= @post.content %><br>
+  <%= @post.created_at %>
 </div>
-<div class="tweet-box">
+<div class="post-box">
 
             <%= form_with(model: [@goal, @post, Comment.new], url: goal_post_comments_path(@goal, @post), local: true) do |form| %>
             
-  <%= form.text_area :content, placeholder: "text" %>
-  <%= form.file_field :image %>
+  <%= form.text_area :comment, placeholder: "text" %>
   <%= form.submit "SEND" %>
 <% end %>
 
 
         </div>
 
-  <main id="main">
-     <div class="comments">
-      <h4>＜コメント一覧＞</h4>
+
+
       <% @comments.each do |comment| %>
-        <p>
-          <strong><%= link_to comment.user.nickname, "/users/#{comment.user_id}" %>：</strong>
-          <%= comment.text %>
-        </p>
+      <div class="post-box">
+         
+          <%= comment.comment %>
+         </div>
       <% end %>
-    </div>
+   
        
   </main>
   <aside id="sub">

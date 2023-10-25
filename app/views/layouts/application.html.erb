@@ -20,9 +20,7 @@
 
    
 
-<%= form_with(url: search_goal_posts_path(@goal), local: true, method: :get, class: "search-wrap") do |form| %>
-  <%= form.text_field :keyword, class: "search-text" %>
-<% end %>
+
 
           <% if user_signed_in? %>
             <div class="nav__right">
