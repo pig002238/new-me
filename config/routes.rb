@@ -2,11 +2,9 @@ Rails.application.routes.draw do
   devise_for :users
   root to: "goals#index"
   resources :goals do
-    resources :posts do
-      resources :comments
-      collection do
-        get 'search'
-      end
+    resources :posts, only: [:create, :show] do
+      resources :comments, only: [:create]
     end
   end
+  resources :rooms, only: [:new, :create]
 end
