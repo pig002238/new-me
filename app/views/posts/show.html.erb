@@ -1,0 +1,40 @@
+ <header id="header"></header>
+<div id="contents">
+  <aside id="sub">
+    <div class="box">
+  </aside>
+<div class="tweet_box">
+  <%= @post.content %>
+</div>
+<div class="tweet-box">
+
+            <%= form_with(model: [@goal, @post, Comment.new], url: goal_post_comments_path(@goal, @post), local: true) do |form| %>
+            
+  <%= form.text_area :content, placeholder: "text" %>
+  <%= form.file_field :image %>
+  <%= form.submit "SEND" %>
+<% end %>
+
+
+        </div>
+
+  <main id="main">
+     <div class="comments">
+      <h4>＜コメント一覧＞</h4>
+      <% @comments.each do |comment| %>
+        <p>
+          <strong><%= link_to comment.user.nickname, "/users/#{comment.user_id}" %>：</strong>
+          <%= comment.text %>
+        </p>
+      <% end %>
+    </div>
+       
+  </main>
+  <aside id="sub">
+    <div class="box">
+     
+    </div>
+  </aside>
+</div>
+
+ 

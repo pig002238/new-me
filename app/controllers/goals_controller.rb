@@ -39,6 +39,10 @@ class GoalsController < ApplicationController
     redirect_to root_path
   end
 
+  def search
+    @goals = Goal.search(params[:keyword])
+  end
+
   private
 
   def goal_params

@@ -1,0 +1,5 @@
+<div class="contents row">
+  <% @goals.each do |goal| %>
+    <%= render partial: "goal", locals: { goal: goal } %>
+  <% end %>
+</div>

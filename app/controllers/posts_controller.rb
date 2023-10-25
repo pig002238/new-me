@@ -12,7 +12,11 @@ class PostsController < ApplicationController
   end
 
   def show
- end
+    @post = Post.find(params[:id])
+    @goal = @post.goal
+    @comment = Comment.new
+    @comments = @post.comments.includes(:user)
+  end
 
   private
   def post_params
