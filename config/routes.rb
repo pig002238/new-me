@@ -6,5 +6,10 @@ Rails.application.routes.draw do
       resources :comments, only: [:create]
     end
   end
-  resources :rooms, only: [:index, :new, :create]
+  
+  resources :rooms, only: [:index, :new, :create] do
+    collection do
+      get "search"
+    end
+  end
 end
