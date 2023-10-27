@@ -6,10 +6,11 @@ Rails.application.routes.draw do
       resources :comments, only: [:create]
     end
   end
-  
-  resources :rooms, only: [:index, :new, :create] do
-    collection do
-      get "search"
-    end
+
+  resources :rooms, only: [:index, :new, :create, :destroy] do
+    resources :messages, only: [:index, :create] 
+      collection do
+        get "search"
+      end
   end
 end

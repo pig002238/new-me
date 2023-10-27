@@ -1,0 +1,26 @@
+<header id="header"></header>
+<div id="contents">
+  <aside id="sub">
+    <div class="box">
+     
+  </aside>
+  <main id="main">
+     <div id="tweet-box">
+
+
+<%= form_with(model: @post, url: posts_path, method: :post) do |form| %>
+
+
+  <%= form.text_area :content, placeholder: "投稿内容" %>
+  <%= form.submit "投稿" %>
+<% end %>
+<%= debug(params) %>
+
+      </div>
+
+
+  </main>
+  <aside id="sub">
+    
+  </aside>
+</div>

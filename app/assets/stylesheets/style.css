@@ -314,6 +314,7 @@ animation: loop2 50s linear infinite;
   background: #FFF;
   border-right: 1px solid #c7c7c7;
   border-left: 1px solid #c7c7c7;
+  height: 100vh;
 }
 #sub .box{
   position: sticky;
@@ -408,9 +409,61 @@ body {
   width: 70%;
 }
 
-/* チャットホーム */
+/* チャットトップ */
 .rooms {
   padding: 10px;
   border-bottom: 1px solid #ccc;
   margin: 10px;
+}
+
+.room {
+  padding: 10px;
+  border-bottom: 1px solid #ccc;
+  margin: 10px;
+}
+
+.create-room {
+  padding: 10px;
+  margin: 10px;
+}
+
+.chat {
+  height: 100vh;
+  width: calc(100vw - 300px);
+}
+
+/* チャットメイン */
+.main-top{
+  height: 50px;
+  border-bottom: 1px solid #ccc;
+  margin: 10px;
+}
+
+.room-name {
+  line-height: 50px;
+  padding-left: 20px;
+  font-weight: 600;
+  font-size: 20px;
+}
+
+.chat-end {
+  position: absolute;
+  right: 0;
+}
+
+.messages {
+  height: calc(100vh - 50px - 300px);
+  padding-left: 20px;
+  border-bottom: 1px solid #ccc;
+  overflow: scroll;
+}
+
+.messages-box {
+  padding: 10px;
+  border-bottom: 1px solid #ccc;
+}
+
+.form {
+  width: calc(100vw - 300px);
+  height: 300px;
 }

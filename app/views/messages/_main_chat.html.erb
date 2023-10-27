@@ -1,13 +1,25 @@
-<main id="main"> 
+<div class="main-top">
+  <div class="room-name">
+  <%= @room.name%>
+  
+  <%= link_to "チャットを終了する", room_path(@room), data: { turbo_method: :delete }, class: "chat-end" %>
+  </div>
+</div>
 
-</main>
+
+<div class="messages">
+  <%= render partial: 'message', collection: @messages %>
+</div>
+
+
+
 
 
 <%= form_with model: [@room, @message], class: 'form', local: true do |f| %>
   <div class="form-input">
-    <%= f.text_field :content, class: 'form-message', placeholder: 'type a message' %>
+    <%= f.text_area :content, class: 'form-message', placeholder: 'type a message' %><br>
     <label class="form-image">
-      <span class="image-file">画像</span>
+      <span class="image-file"></span>
       <%= f.file_field :image, class: 'hidden' %>
     </label>
   </div>
