@@ -4,7 +4,7 @@ class PostsController < ApplicationController
     if @post.save
       redirect_to goal_path(@post.goal) 
     else
-      render "goals/show" 
+      render show
     end
   end
 

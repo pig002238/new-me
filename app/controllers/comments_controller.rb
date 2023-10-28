@@ -1,10 +1,14 @@
 class CommentsController < ApplicationController
   def create
-    @comment = Comment.create(comment_params)
+    @post = Post.find(params[:post_id])
+  @goal = @post.goal
+  @comment = Comment.new(comment_params)
+  @comments = @post.comments.includes(:user)
+  @user = @post.user
     if @comment.save
       redirect_to goal_post_path(@comment.post.goal_id, @comment.post.id)
     else
-      render "goals/show" 
+      render "posts/show"
     end
   end
   
