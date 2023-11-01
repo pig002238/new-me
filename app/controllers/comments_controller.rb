@@ -6,7 +6,7 @@ class CommentsController < ApplicationController
   @comments = @post.comments.includes(:user)
   @user = @post.user
     if @comment.save
-      redirect_to goal_post_path(@comment.post.goal_id, @comment.post.id)
+      CommentChannel.broadcast_to @post, { comment: @comment, user: @comment.user }
     else
       render "posts/show"
     end

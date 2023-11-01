@@ -1,9 +1,8 @@
 class GoalsController < ApplicationController
-  before_action :authenticate_user! # ログインユーザーのみアクセス可
   before_action :set_tweet, only: [:edit, :show, :update, :destroy]
 
   def index
-    @goals = Goal.all
+    @goals = Goal.all.includes(:user)
   end
 
   def new
@@ -35,7 +34,7 @@ class GoalsController < ApplicationController
   end
 
   def destroy
-    @goal.destroy
+    @goal.posts.destroy
     redirect_to root_path
   end
 

@@ -14,7 +14,7 @@
 <div class="anchor">|</div>
 <%= link_to "CHAT", rooms_path, class: :anchor %>
 </div>
-
+<%if user_signed_in?%>
 <div class="goal-info">
   <% @goals.each do |goal| %>
   <%= link_to goal_path(goal), class: "goal-button" do %>
@@ -33,7 +33,7 @@
 <% end %>
 
 </div>
-
+<% end %>
 
 
 

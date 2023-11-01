@@ -35,6 +35,11 @@ a {
 }
 
 /* ヘッダー */
+.top {
+  background-image: image-url('14680155.jpeg');
+  height: 800px;
+  background-size: cover;
+}
 .header {
   background-color: #fff;
   padding: 20px 0;
@@ -314,7 +319,6 @@ animation: loop2 50s linear infinite;
   background: #FFF;
   border-right: 1px solid #c7c7c7;
   border-left: 1px solid #c7c7c7;
-  height: 100vh;
 }
 #sub .box{
   position: sticky;

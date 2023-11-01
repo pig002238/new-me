@@ -12,14 +12,14 @@
   <%= @post.created_at %><br>
 </div>
 <div class="post-box">
-
+<% if user_signed_in? %>
             <%= form_with(model: [@goal, @post, Comment.new], url: goal_post_comments_path(@goal, @post), local: true) do |form| %>
             
   <%= form.text_area :comment, placeholder: "text" %>
   <%= form.submit "SEND" %>
 <% end %>
 
-
+  <% end %>
         </div>
 
 
