@@ -1,9 +1,7 @@
 class GoalsController < ApplicationController
   before_action :set_tweet, only: [:edit, :show, :update, :destroy]
 
-  def index
-    @goals = Goal.all.includes(:user)
-  end
+ 
 
   def new
     @goal = Goal.new
@@ -12,7 +10,7 @@ class GoalsController < ApplicationController
   def create
     @goal = Goal.new(goal_params)
     if @goal.save
-      redirect_to root_path
+      redirect_to user_path(current_user.id)
     else
       render :new
     end
@@ -27,15 +25,15 @@ class GoalsController < ApplicationController
 
   def update
     if @goal.update(goal_params)
-      redirect_to root_path
+      redirect_to user_path(current_user.id)
     else
       render :edit, status: :unprocessable_entity
     end
   end
 
   def destroy
-    @goal.posts.destroy
-    redirect_to root_path
+    @goal.destroy
+    redirect_to user_path(current_user.id)
   end
 
   def search
