@@ -4,7 +4,7 @@ if(location.pathname.match(/\/posts\/\d/)){
 
   consumer.subscriptions.create({
     channel: "CommentChannel",
-    post_id: location.pathname.match(/\d+/)[0]
+    post_id: location.pathname.match(/\/posts\/(\d+)/)[1]
   }, {
   connected() {
     // Called when the subscription is ready for use on the server
@@ -19,8 +19,8 @@ if(location.pathname.match(/\/posts\/\d/)){
     <div class="post-box">
       ${data.comment.comment}
     </div>`
-  const main = document.getElementById("main")
-  main.insertAdjacentHTML('beforeend', html)
+  const comments = document.getElementById("comments")
+  comments.insertAdjacentHTML('beforeend', html)
   const commentForm = document.getElementById("post")
   commentForm.reset();
   }
