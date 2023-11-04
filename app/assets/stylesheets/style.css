@@ -421,6 +421,14 @@ body {
   margin: 10px;
 }
 
+#side {
+  box-sizing: border-box;
+  width: 300px;
+  background: #FFF;
+  border-right: 1px solid #c7c7c7;  
+  height: 100vh;
+}
+
 .room {
   padding: 10px;
   border-bottom: 1px solid #ccc;
