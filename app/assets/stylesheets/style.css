@@ -281,21 +281,24 @@ animation: loop2 50s linear infinite;
   padding: 10px;
   margin: 5px;
   background-color: #f0f0f0;
-  height: 500px;
-  width: 450px;
-  font-size: 30px;
-}
+  width: 280px;
+ }
 
 .goal-info {
   display: flex;
+  justify-content: center;
+  flex-direction: column;
 }
 
-.anchor {
+.new {
   display: flex;
-  font-size: 25px;
-  padding: 5px;
-  margin-left: 20px;
+  justify-content:space-around;
+  border-bottom: 1px solid #ccc;
+  padding: 10px;
+  margin: 10px;
+  font-size: 18px;
 }
+
 
 
 /* 投稿詳細 */

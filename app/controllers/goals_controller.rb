@@ -1,5 +1,5 @@
 class GoalsController < ApplicationController
-  before_action :set_tweet, only: [:edit, :show, :update, :destroy]
+  before_action :set_goal, only: [:edit, :show, :update, :destroy]
 
  
 
@@ -17,6 +17,7 @@ class GoalsController < ApplicationController
   end
 
   def show
+    @goals = current_user.goals
     @posts = @goal.posts
   end
 
@@ -46,7 +47,7 @@ class GoalsController < ApplicationController
     params.require(:goal).permit( :purpose, :goal, :action, :deadline).merge(user_id: current_user.id)
   end
 
-  def set_tweet
+  def set_goal
     @goal = Goal.find(params[:id])
   end
 end

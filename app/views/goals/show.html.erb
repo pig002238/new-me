@@ -1,6 +1,27 @@
 <header id="header"></header>
 <div id="contents">
   <aside id="sub">
+<div class="new">
+<%= link_to "新規目標", new_goal_path %>
+<%= link_to "チャット", rooms_path %>
+</div>
+
+ <div class="goal-info">
+  <% @goals.each do |goal| %>
+  <%= link_to goal_path(goal), class: "goal-button" do %>
+    
+      <% if goal.deadline %>
+        <span><%= goal.goal %></span><br>
+        <% if goal.deadline > Date.today %>
+          <% days_remaining = (goal.deadline - Date.today).to_i %>
+          <span>期日まで残り <%= days_remaining %> 日</span>
+        <% else %>
+          <span>期日が過ぎています</span>
+        <% end %>
+      <% end %>
+    
+  <% end %>
+<% end %>
 
      
   </aside>
