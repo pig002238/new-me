@@ -1,7 +1,6 @@
-import consumer from "channels/consumer"
+import consumer from "./consumer"
 
 if(location.pathname.match(/\/posts\/\d/)){
-
   consumer.subscriptions.create({
     channel: "CommentChannel",
     post_id: location.pathname.match(/\/posts\/(\d+)/)[1]
