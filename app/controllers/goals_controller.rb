@@ -18,7 +18,7 @@ class GoalsController < ApplicationController
 
   def show
     @goals = current_user.goals
-    @posts = @goal.posts
+    @posts = @goal.posts.order(created_at: :desc)
   end
 
   def edit

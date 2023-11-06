@@ -1,6 +1,5 @@
 class PostsController < ApplicationController
   def create
-    binding.pry
     @post = Post.new(post_params)
     if @post.save
       redirect_to goal_path(@post.goal) 
@@ -14,7 +13,7 @@ class PostsController < ApplicationController
     @goal = @post.goal
     @goals = current_user.goals
     @comment = Comment.new
-    @comments = @post.comments.includes(:user)
+    @comments = @post.comments.order(created_at: :desc)
     @user = @post.user
   end
 
