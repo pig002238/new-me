@@ -2,7 +2,7 @@ ja:
   activerecord:
     attributes:
       goal:
-        purpose: テキスト
-        goal: テキスト
-        action: テキスト
-        date: 期日
+        purpose: 目的
+        goal: 目標
+        action: 行動
+        deadline: 期日

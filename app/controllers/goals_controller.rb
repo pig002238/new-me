@@ -12,7 +12,7 @@ class GoalsController < ApplicationController
     if @goal.save
       redirect_to user_path(current_user.id)
     else
-      render :new
+      render :new, status: :unprocessable_entity
     end
   end
 
