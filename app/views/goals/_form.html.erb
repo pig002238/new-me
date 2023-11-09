@@ -1,5 +1,5 @@
 <%= form_with(model: @goal, local: true) do |form| %>
-
+<%= render 'layouts/error_messages', model: form.object %>
   <div class="form-group">
     <%= form.label :purpose, '目的' %><br>
     <%= form.text_area :purpose, class: 'form-control' %>

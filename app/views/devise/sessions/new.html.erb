@@ -1,6 +1,11 @@
 <div class="content">
   <div class="login-content">
-    <h2 class="login-title">ログイン</h2>
+    <h2 class="login-title">ログイン
+     <div class='login-flash-message'>
+      <%= flash[:notice] %>
+      <%= flash[:alert] %>
+    </div>
+    </h2>
     <div class="login-error"></div>
     <div class="login-container">
       <div class="login-container-contents">

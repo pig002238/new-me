@@ -1,4 +1,8 @@
 ja:
-  time:
-    formats:
-      default: "%Y/%m/%d %H:%M:%S"
+  activerecord:
+    attributes:
+      goal:
+        purpose: テキスト
+        goal: テキスト
+        action: テキスト
+        date: 期日
