@@ -48,12 +48,14 @@
   <aside id="sub">
     <div class="box">
      <ul class="more_list">
+      <% if user_signed_in? && current_user.id == @goal.user_id %>
           <li>
             <%= link_to '編集', edit_goal_path(@goal.id) %>
           </li>
           <li>
             <%= link_to '削除', goal_path(@goal.id), data: { turbo_method: :delete } %>
           </li>
+          <% end %>
         </ul>
     </div>
   </aside>

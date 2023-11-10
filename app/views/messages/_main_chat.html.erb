@@ -1,8 +1,9 @@
 <div class="main-top">
   <div class="room-name">
   <%= @room.name%>
-  
+    <% if user_signed_in? && current_user.id %>
   <%= link_to "チャットを終了する", room_path(@room), data: { turbo_method: :delete }, class: "chat-end" %>
+  <% end %>
   </div>
 </div>
 
