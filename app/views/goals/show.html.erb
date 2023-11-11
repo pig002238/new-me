@@ -36,7 +36,7 @@
 
         <% @posts.each do |post| %>
         <div class="post-box">
-        <%= link_to goal_post_path(@goal, post) do%>
+       <%= link_to goal_post_path(@goal, post),data: { turbo: false } do%>
                 <%= post.content %><br>
                 <%= image_tag post.image.variant(resize: '500x500'), class: 'post-image' if post.image.attached? %>
                  <% end %>
