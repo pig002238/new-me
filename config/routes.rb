@@ -3,7 +3,7 @@ Rails.application.routes.draw do
   root to: "goals#index"
   resources :users, only: [:show]
   resources :goals do
-    resources :posts, only: [:create, :show] do
+    resources :posts, only: [:create, :show, :destroy] do
       resources :comments, only: [:create]
     end
   end

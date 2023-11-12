@@ -39,7 +39,8 @@
        <%= link_to goal_post_path(@goal, post),data: { turbo: false } do%>
                 <%= post.content %><br>
                 <%= image_tag post.image.variant(resize: '500x500'), class: 'post-image' if post.image.attached? %>
-                 <% end %>
+                 <% end %> 
+                 <%= link_to '削除', goal_post_path(@goal,post), data: { turbo_method: :delete }  %>
                </div>
            
             <% end %>
