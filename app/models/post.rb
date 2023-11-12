@@ -4,9 +4,9 @@ class Post < ApplicationRecord
   has_one_attached :image
   has_many :comments, dependent: :destroy
 
-   validates :content, presence: true, unless: :was_attached?
+  validates :content, presence: true, unless: :was_attached?
 
   def was_attached?
-    self.image.attached?
+    image.attached?
   end
 end

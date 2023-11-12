@@ -6,11 +6,10 @@ class Room < ApplicationRecord
   validates :name, presence: true
 
   def self.search(search)
-    if search != ""
+    if search != ''
       Room.where('name LIKE(?)', "%#{search}%")
     else
       Room.all
     end
   end
-
 end

@@ -24,6 +24,7 @@ class PostsController < ApplicationController
   end
 
   private
+
   def post_params
     params.require(:post).permit(:content, :image).merge(user_id: current_user.id, goal_id: params[:goal_id])
   end
@@ -31,5 +32,4 @@ class PostsController < ApplicationController
   def set_post
     @post = Post.find(params[:id])
   end
-
 end

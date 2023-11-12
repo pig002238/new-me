@@ -1,8 +1,6 @@
 class GoalsController < ApplicationController
   before_action :set_goal, only: [:edit, :show, :update, :destroy]
 
- 
-
   def new
     @goal = Goal.new
   end
@@ -44,7 +42,7 @@ class GoalsController < ApplicationController
   private
 
   def goal_params
-    params.require(:goal).permit( :purpose, :goal, :action, :deadline).merge(user_id: current_user.id)
+    params.require(:goal).permit(:purpose, :goal, :action, :deadline).merge(user_id: current_user.id)
   end
 
   def set_goal
