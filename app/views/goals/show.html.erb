@@ -25,6 +25,7 @@
      
   </aside>
   <main id="main">
+     <div class="goal_title"><%= @goal.goal %></div>
      <div class="post-box">
             <%= form_with(model: [@goal, Post.new],local: true) do |form| %>
             <%= form.text_area :content, placeholder: "text"%>
