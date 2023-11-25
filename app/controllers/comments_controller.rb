@@ -4,7 +4,7 @@ class CommentsController < ApplicationController
     @goals = current_user.goals
     @goal = @post.goal
     @comment = Comment.new(comment_params)
-    @comments = @post.comments.order(created_at: :desc)
+    @comments = @post.comments.includes(:user).order(created_at: :desc)
     @user = @post.user
     if @comment.save
       CommentChannel.broadcast_to @post, { comment: @comment, user: @comment.user }

@@ -42,17 +42,15 @@ a {
 }
 .header {
   background-color: #fff;
-  padding: 20px 0;
-
+  padding: 20px;
 }
 .inner {
-  width: 1024px;
-  margin: 0 auto;
+  margin: 20px;
 }
 .nav {
   width: 100%;
   display: flex;
-  justify-content: space-between;
+  justify-content: space-around;
   align-items: center;
 }
 
@@ -71,94 +69,6 @@ a {
   margin-right: 20px;
 }
 
-
-
-/* ログイン */
-.login-content {
-  background-color: #f5f5f5;
-  padding: 43px 0 60px;
-  margin: 45px auto 0;
-  width: 760px;
-  border-radius: 10px;
-}
-
-.login-title {
-  text-align: center;
-  font-size: 20px;
-  font-weight: 600;
-}
-
-.login-error {
-  margin: 30px auto 0;
-}
-
-.login-container-contents {
-  display: flex;
-  justify-content: center;
-  padding: 0 200px;
-}
-
-.button {
-  background-color: #fff;
-  border-radius: 20px;
-  color: #23abdd;
-  border: 1px solid #fff;
-  width: 150px;
-}
-.login-regist {
-  margin: 55px auto 0;
-  text-align: center;
-}
-
-.login-regist_heading {
-  font-size: 20px;
-  font-weight: 600;
-  margin-bottom: 20px;
-}
-
-.field {
-  margin-top: 10px;
-}
-
-.actions {
-  margin-top: 5px;
-}
-
-.login-regist_button {
-  font-weight: 600;
-  border: 1px solid #23abdd;
-  border-radius: 20px;
-  background-color: #23abdd;
-  color: #fff;
-  padding: 10px;
-}
-.login-regist_button:hover {
-  font-weight: 600;
-  border: 1px solid #23abdd;
-  background-color: #fff;
-  color: #23abdd;
-}
-
-
-/* 新規登録 */
-.regist-signup {
-  background-color: #f5f5f5;
-  padding: 43px 0 60px;
-  margin: 45px auto 0;
-  width: 760px;
-  border-radius: 10px;
-}
-
-.regist-title {
-  text-align: center;
-  font-size: 20px;
-  font-weight: 600;
-}
-
-.regist-error {
-  margin: 30px auto 0;
-}
-
 /* Pass忘れ */
 .forget-title {
   margin-left: 240px;
@@ -173,36 +83,6 @@ a {
   width: 760px;
   border-radius: 10px;
 }
-
-
-/* 目標設定 */
-.contents {
-  display: flex;
-  justify-content: center;
-  flex-direction: column;
-  align-items: center;
-  margin-top: 40px;
-}
-.container {
-  background-color: #f5f5f5;
-  display: flex;
-  justify-content: center;
-  flex-direction: column;
-  align-items: center;
-  width: 750px;
-  height: 650px;
-}
-.form-group {
-  font-size: 18px;
-}
-.form-control {
-  width: 400px;
-  height: 70px;
-}
-.form-date {
-  margin-bottom: 10px;
-}
-
 
 /* マイページ */
 article{
@@ -270,188 +150,4 @@ animation: loop2 50s linear infinite;
   padding: 10px;
   margin: 10px;
   font-size: 18px;
-}
-
-
-
-/* 投稿詳細 */
-#header {
-  box-sizing: border-box;
-  background: #ccc;
-  height: 1px;
-}
-#contents{
-  display: flex;
-  box-sizing: border-box;
-}
-#main {
-  box-sizing: border-box;
-  height: 2000px;
-  flex: 1;
-}
-#sub {
-  box-sizing: border-box;
-  width: 300px;
-  background: #FFF;
-  border-right: 1px solid #c7c7c7;
-  border-left: 1px solid #c7c7c7;
-  
-}
-#sub .box{
-  position: sticky;
-  top: 25px;
-  width: 100%;
-  height: 10px;
-}
-
-.goal_title {
-  padding: 10px;
-  border-bottom: 1px solid #ccc;
-  margin: 10px;
-}
-
-body {
-  margin: 0;
-  padding: 0;
-}
-
-.post-box {
-  padding: 10px;
-  border-bottom: 1px solid #ccc;
-  margin: 10px;
-}
-
-.post-box textarea {
-  width: 100%;
-  border: none;
-  padding: 10px;
-}
-
-.post{
-  border: 1px solid;
-  width: 40%;
-  margin-top: 30px;
-}
-
-.post-date{
-  color: gray;
-}
-
-
-/* チャット新規 */
-.chat-room-form {
-  width: 980px;
-  margin: 60px auto;
-  padding: 40px;
-  background-color: #fff;
-  border: 1px solid #ddd;
-  border-radius: 5px;
-  box-sizing: border-box;
-}
-.chat-room-form__errors {
-  margin: 30px 0;
-  padding: 20px 40px;
-  border: 1px solid #ddd;
-  border-radius: 2px;
-  text-align: center;
-}
-.chat-room-form__label {
-  display: block;
-  line-height: 50px;
-  font-weight: bold;
-  text-align: right;
-}
-.chat-room-form__input {
-  float: left;
-  width: 100%;
-  line-height: 30px;
-  padding: 10px 15px;
-  box-sizing: border-box;
-}
-
-.chat-room-form__field {
-  margin-top: 30px;
-}
-.chat-room-form__field:after {
-  content: "";
-  clear: both;
-  display: block;
-}
-.chat-room-form__field--left {
-  float: left;
-  width: 30%;
-  padding-right: 20px;
-  padding-left: 20px;
-  box-sizing: border-box;
-}
-.chat-room-form__field--right {
-  float: right;
-  width: 70%;
-}
-
-/* チャットトップ */
-.rooms {
-  padding: 10px;
-  border-bottom: 1px solid #ccc;
-  margin: 10px;
-}
-
-#side {
-  box-sizing: border-box;
-  width: 300px;
-  background: #FFF;
-  border-right: 1px solid #c7c7c7;  
-  height: 100vh;
-}
-
-.room {
-  padding: 10px;
-  border-bottom: 1px solid #ccc;
-  margin: 10px;
-}
-
-.create-room {
-  padding: 10px;
-  margin: 10px;
-}
-
-.chat {
-  height: 100vh;
-  width: calc(100vw - 300px);
-}
-
-/* チャットメイン */
-.main-top{
-  height: 50px;
-  border-bottom: 1px solid #ccc;
-  margin: 10px;
-}
-
-.room-name {
-  line-height: 50px;
-  padding-left: 20px;
-  font-weight: 600;
-  font-size: 20px;
-}
-
-.chat-end {
-  position: absolute;
-  right: 0;
-}
-
-.messages {
-  height: calc(100vh - 50px - 300px);
-  padding-left: 20px;
-  border-bottom: 1px solid #ccc;
-  overflow: scroll;
-}
-
-.messages-box {
-  padding: 10px;
-  border-bottom: 1px solid #ccc;
-}
-
-.form {
-  width: calc(100vw - 300px);
-  height: 200px;
 }

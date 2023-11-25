@@ -1,0 +1,18 @@
+/* 新規登録 */
+.regist-signup {
+  background-color: #f5f5f5;
+  padding: 43px 0 60px;
+  margin: 45px auto 0;
+  width: 760px;
+  border-radius: 10px;
+}
+
+.regist-title {
+  text-align: center;
+  font-size: 20px;
+  font-weight: 600;
+}
+
+.regist-error {
+  margin: 30px auto 0;
+}

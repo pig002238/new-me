@@ -1,0 +1,62 @@
+/* 投稿詳細 */
+#header {
+  box-sizing: border-box;
+}
+#contents{
+  display: flex;
+  box-sizing: border-box;
+  border: 1px solid #ccc;
+}
+#main {
+  box-sizing: border-box;
+  border: 1px solid #ccc;
+  height: 2000px;
+  flex: 1;
+}
+#sub {
+  box-sizing: border-box;
+  width: 300px;
+  background: #FFF;
+  border: 1px solid #c7c7c7;
+  
+  
+}
+#sub .box{
+  position: sticky;
+  top: 25px;
+  width: 100%;
+  height: 10px;
+}
+
+.goal_title {
+  padding: 10px;
+  border-bottom: 1px solid #ccc;
+  margin: 10px;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+}
+
+.post-box {
+  padding: 10px;
+  border-bottom: 1px solid #ccc;
+  margin: 10px;
+}
+
+.post-box textarea {
+  width: 100%;
+  border: none;
+  padding: 10px;
+}
+
+.post{
+  border: 1px solid;
+  width: 40%;
+  margin-top: 30px;
+}
+
+.post-date{
+  color: gray;
+}
