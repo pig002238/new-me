@@ -25,7 +25,27 @@
      
   </aside>
   <main id="main">
-     <div class="goal_title"><%= @goal.goal %></div>
+     <div class="goal_title"><%= @goal.goal %>
+    <div class="dropdown">
+    
+      <img src="/assets/menu1.jpeg" class="btn" >
+    
+
+  <ul class="more_list">
+    <% if user_signed_in? && current_user.id == @goal.user_id %>
+      <li>
+        <%= link_to '編集', edit_goal_path(@goal.id) %>
+      </li>
+      <li>
+        <%= link_to '削除', goal_path(@goal.id), data: { turbo_method: :delete } %>
+      </li>
+    <% end %>
+  </ul>
+</div>
+
+</div>
+
+     
      <div class="post-box">
             <%= form_with(model: [@goal, Post.new],local: true) do |form| %>
             <%= form.text_area :content, placeholder: "text"%>
@@ -46,18 +66,4 @@
             <% end %>
 
   </main>
-  <aside id="sub">
-    <div class="box">
-     <ul class="more_list">
-      <% if user_signed_in? && current_user.id == @goal.user_id %>
-          <li>
-            <%= link_to '編集', edit_goal_path(@goal.id) %>
-          </li>
-          <li>
-            <%= link_to '削除', goal_path(@goal.id), data: { turbo_method: :delete } %>
-          </li>
-          <% end %>
-        </ul>
-    </div>
-  </aside>
-</div>
+ 
