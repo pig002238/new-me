@@ -8,7 +8,7 @@ NEW ME
 https://new-me-qvwo.onrender.com/
 
 ## テスト用アカウント
-・メールアドレス : aaaa@aaaa.com
+・メールアドレス : test@test.com
 
 ・パスワード : 111111
 

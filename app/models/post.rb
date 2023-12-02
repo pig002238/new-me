@@ -3,6 +3,7 @@ class Post < ApplicationRecord
   belongs_to :goal
   has_one_attached :image
   has_many :comments, dependent: :destroy
+  has_many :remindeies
 
   validates :content, presence: true, unless: :was_attached?
 

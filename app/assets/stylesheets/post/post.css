@@ -4,14 +4,13 @@
 }
 #contents{
   display: flex;
-  margin: 0 50px;
   box-sizing: border-box;
   border: 1px solid #ccc;
 }
 #main {
   box-sizing: border-box;
   border: 1px solid #ccc;
-  height: 2000px;
+  height: 100%;
   flex: 1;
 }
 #sub {

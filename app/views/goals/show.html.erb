@@ -26,12 +26,12 @@
   </aside>
   <main id="main">
      <div class="goal_title"><%= @goal.goal %>
-    <div class="dropdown">
+    <div id="dropdown" class="dropdown">
     
-      <img src="/assets/menu1.jpeg" class="btn" >
+      <img src="/assets/menu1.jpeg" id="btn" class="btn" >
     
 
-  <ul class="more_list">
+  <ul id="more_list" class="more_list">
     <% if user_signed_in? && current_user.id == @goal.user_id %>
       <li>
         <%= link_to '編集', edit_goal_path(@goal.id) %>
