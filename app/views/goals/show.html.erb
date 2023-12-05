@@ -25,25 +25,21 @@
      
   </aside>
   <main id="main">
-     <div class="goal_title"><%= @goal.goal %>
-    <div id="dropdown" class="dropdown">
-    
-      <img src="/assets/menu1.jpeg" id="btn" class="btn" >
-    
-
-  <ul id="more_list" class="more_list">
-    <% if user_signed_in? && current_user.id == @goal.user_id %>
-      <li>
-        <%= link_to '編集', edit_goal_path(@goal.id) %>
-      </li>
-      <li>
-        <%= link_to '削除', goal_path(@goal.id), data: { turbo_method: :delete } %>
-      </li>
-    <% end %>
-  </ul>
-</div>
-
-</div>
+    <div class="goal_title"><%= @goal.goal %>
+      <div id="dropdown" class="dropdown">
+        <div id="btn" class="btn" >…</div>
+        <ul id="more_list" class="more_list">
+          <% if user_signed_in? && current_user.id == @goal.user_id %>
+            <li>
+              <%= link_to '編集', edit_goal_path(@goal.id) %>
+            </li>
+            <li>
+              <%= link_to '削除', goal_path(@goal.id), data: { turbo_method: :delete } %>
+            </li>
+          <% end %>
+        </ul>
+      </div>
+    </div>
 
      
      <div class="post-box">

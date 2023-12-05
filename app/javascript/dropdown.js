@@ -1,9 +1,8 @@
 $(function(){
   let btn = $(".dropdown .btn");
   let submenu = $(".dropdown .more_list");
-
   // クリックイベント
-  $(btn).bind("click", function(event) {
+  $(btn).click(function(event) {
     event.preventDefault();
     if ($(submenu).css("display") == "none") {
       $(submenu).slideDown("fast");
