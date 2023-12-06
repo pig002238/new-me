@@ -47,5 +47,6 @@ end
 
   def set_goal
     @goal = Goal.find(params[:id])
+    @user = @goal.user
   end
 end

@@ -6,6 +6,7 @@
   display: flex;
   box-sizing: border-box;
   border: 1px solid #ccc;
+  margin: 0 100px;
 }
 #main {
   box-sizing: border-box;
@@ -45,6 +46,8 @@ body {
   padding: 10px;
   border-bottom: 1px solid #ccc;
   margin: 10px;
+  display: flex;
+  justify-content: space-between;
 }
 
 .post-box textarea {
@@ -86,7 +89,7 @@ body {
 }
 
 .more_list li {
-  width: 60px;
+  width: 120px;
   padding: 10px;
   border-bottom: 1px solid #dddddd;
 }

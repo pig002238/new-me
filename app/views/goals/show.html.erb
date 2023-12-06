@@ -21,7 +21,15 @@
       <% end %>
   <% end %>
 <% end %>
-
+<h3>フォロー</h3>
+    <% @user.followings.each do |user| %>
+      <p class=“f-user”><%= link_to user.nickname, user_path(user.id) %></p>
+    <% end %>
+    <h3>フォロワー</h3>
+    <% @user.followers.each do |user| %>
+      <p class=“f-user”><%= link_to user.nickname, user_path(user.id) %></p>
+    <% end %>
+</div>
      
   </aside>
   <main id="main">
@@ -31,10 +39,10 @@
         <ul id="more_list" class="more_list">
           <% if user_signed_in? && current_user.id == @goal.user_id %>
             <li>
-              <%= link_to '編集', edit_goal_path(@goal.id) %>
+              <%= link_to '目標の編集', edit_goal_path(@goal.id) %>
             </li>
             <li>
-              <%= link_to '削除', goal_path(@goal.id), data: { turbo_method: :delete } %>
+              <%= link_to '目標の削除', goal_path(@goal.id), data: { turbo_method: :delete } %>
             </li>
           <% end %>
         </ul>
@@ -42,24 +50,39 @@
     </div>
 
      
-     <div class="post-box">
-            <%= form_with(model: [@goal, Post.new],local: true) do |form| %>
-            <%= form.text_area :content, placeholder: "text"%>
-            <%= form.file_field :image %>
-            <%= form.submit "SEND" %>
-            <% end %>
-        </div>
+    <div class="post-box">
+      <%= form_with(model: [@goal, Post.new],local: true) do |form| %>
+      <%= form.text_area :content, placeholder: "text"%>
+      <%= form.file_field :image %>
+      <%= form.submit "SEND" %>
+      <% end %>
+    </div>
 
-        <% @posts.each do |post| %>
-        <div class="post-box">
-       <%= link_to goal_post_path(@goal, post),data: { turbo: false } do%>
-                <%= post.content %><br>
-                <%= image_tag post.image.variant(resize: '500x500'), class: 'post-image' if post.image.attached? %>
-                 <% end %> 
-                 <%= link_to '削除', goal_post_path(@goal,post), data: { turbo_method: :delete }  %>
-               </div>
-           
-            <% end %>
-
+    <% @posts.each do |post| %>
+    <div class="post-box">
+      <%= link_to goal_post_path(@goal, post),data: { turbo: false } do%>
+      <%= post.content %><br>
+      <%= image_tag post.image.variant(resize: '500x500'), class: 'post-image' if post.image.attached? %>
+        <% end %> 
+      <div id="dropdown" class="dropdown">
+        <div id="btn" class="btn" >…</div>
+        <ul id="more_list" class="more_list">
+        <li>
+          <%= link_to '投稿の削除', goal_post_path(@goal,post), data: { turbo_method: :delete }  %>
+        </li>
+        <% if current_user != @user %>
+          <% if @user.followed_by?(current_user) %>
+            <li>
+              <%=link_to "フォロー中", user_relationships_path(@user.id), data: { turbo_method: :delete } %>
+            </li>
+          <% else %>
+            <li>
+              <%=link_to "フォローする", user_relationships_path(@user.id), data: { turbo_method: :post } %>
+            </li>
+          <% end %>
+        <% end %>
+        </ul>
+      </div>
+    </div>
+    <% end %>
   </main>
- 
