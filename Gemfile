@@ -81,6 +81,7 @@ gem 'image_processing', '~> 1.2'
 gem 'actionmailer'
 gem 'rails-i18n'
 gem "sidekiq"
+gem 'turbolinks'
 
 group :production do
   gem 'pg'
